@@ -1,5 +1,6 @@
 import random
 
+from tabulate import tabulate
 class Auto:
 
     matkajanopeusalussa = 0
@@ -23,15 +24,24 @@ class Auto:
 
 Autot=[]
 
+kisa=True
+
 for i in range(10):
     auto = Auto(f"ABC-{i+1}",random.randint(100,200))
     Autot.append(auto)
 
-for i in Autot:
-    while not i.kuljettumatka == 1000:
-        for i in Autot:
-            i.kiihdytä(random.randint(-10,15))
-            i.kulje(1)
+while kisa:
+    for i in Autot:
+        i.kiihdytä(random.randint(-10, 15))
+        i.kulje(1)
+        if i.kuljettumatka > 1000:
+            print(f"Voittaja oli auto {i.rekisteri}")
+            print(f"Huippunopeus oli {i.huippunopeus}")
+            kisa = False
 
+
+tuloste = []
 for i in Autot:
-    print(f"Auton rekisteri on {i.rekisteri:}, huippunopeus on {i.huippunopeus:} km/h, tämän hetkinen nopeus {i.nopeus:} ja kuljettu matka {i.kuljettumatka}.")
+    tuloste.append([i.rekisteri,i.kuljettumatka,i.nopeus,i.huippunopeus])
+
+print(tabulate(tuloste,['Rekkari','matka','nopeus','huiput']))
