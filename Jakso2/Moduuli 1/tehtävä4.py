@@ -34,7 +34,7 @@ while kisa:
     for i in Autot:
         i.kiihdytä(random.randint(-10, 15))
         i.kulje(1)
-        if i.kuljettumatka > 1000:
+        if i.kuljettumatka > 10000:
             print(f"Voittaja oli auto {i.rekisteri}")
             print(f"Huippunopeus oli {i.huippunopeus}")
             kisa = False
