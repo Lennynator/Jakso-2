@@ -34,7 +34,7 @@ class Kisa:
         self.nimi = nimi
         self.pituus = pituus
         self.osallistujat = osallistujat
-        print(f"Tervetuloa kisaan {nimi}. Kilpailin pituus on {pituus} ja siihen osallistuu {osallistujat} verran autoja. Kisa alkakoon!")
+        print(f"Tervetuloa kisaan {nimi}. Kilpailin pituus on {pituus} ja siihen osallistuu {osallistujat} autoa. Kisa alkakoon!")
 
         for i in range(osallistujat):
             auto = Auto(f"ABC-{i + 1}", random.randint(100, 200))
@@ -64,7 +64,7 @@ class Kisa:
 
 
 
-k=Kisa("R",1000,10)
+k=Kisa("Suuri Romuralli",8000,10)
 
 while not Kisa.kilpailu_ohi(k):
     k.tunti_kuluu()
