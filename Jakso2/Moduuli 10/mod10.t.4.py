@@ -41,9 +41,14 @@ class Kisa:
             Autot.append(auto)
 
     def tunti_kuluu(self):
+        self.tunnit = 0
         for i in Autot:
             i.kiihdytä(random.randint(-10, 15))
             i.kulje(1)
+        self.tunnit += 1
+        if self.tunnit%10 == 0:
+            self.tulosta_tilanne()
+
 
 
 
