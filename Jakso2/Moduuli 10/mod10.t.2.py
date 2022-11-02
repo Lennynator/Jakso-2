@@ -30,15 +30,16 @@ class Talo:
         self.hissit = []
         for luku in range(lkm):
             self.hissit.append(Hissi(alinkerros,ylinkerros))
+        print(f"Talossa on {lkm} hissiä.")
 
     def aja_hissia(self, numero, kohdekerros):
         print(f"Ajetaan hissillä {numero}")
         self.hissit[numero-1].siirrykerrokseen(kohdekerros)
 
-talo1=Talo(1,5,2)
+talo1=Talo(1,5,3)
 
 talo1.aja_hissia(1,4)
 talo1.aja_hissia(2,2)
-
+talo1.aja_hissia(3,5)
 
 

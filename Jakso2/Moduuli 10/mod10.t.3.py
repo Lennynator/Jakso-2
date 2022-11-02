@@ -12,7 +12,7 @@ class Hissi:
             self.kerros_ylos()
         while self.kerros > kohdekerros:
             self.kerros_alas()
-            return
+        return
 
     def kerros_alas(self):
         self.kerros -=1
@@ -28,6 +28,7 @@ class Talo:
     def __init__(self, alinkerros, ylinkerros, lkm):
         self.alinkerros = alinkerros
         self.hissit = []
+        print(f"Talossa on {lkm} hissiä.")
         for luku in range(lkm):
             self.hissit.append(Hissi(alinkerros,ylinkerros))
 
@@ -36,9 +37,9 @@ class Talo:
         self.hissit[numero-1].siirrykerrokseen(kohdekerros)
 
     def palohalytys(self):
+        print("Palohälytys, kaikki hissit siirtyvät alas")
         for n in self.hissit:
             n.siirrykerrokseen(self.alinkerros)
-            print("Palohälytys, kaikki hissit siirtyvät alas")
 
 
 
