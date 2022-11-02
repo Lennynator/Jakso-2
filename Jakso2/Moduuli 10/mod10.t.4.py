@@ -34,6 +34,7 @@ class Kisa:
         self.nimi = nimi
         self.pituus = pituus
         self.osallistujat = osallistujat
+        self.tunnit = 0
         print(f"Tervetuloa kisaan {nimi}. Kilpailin pituus on {pituus} ja siihen osallistuu {osallistujat} autoa. Kisa alkakoon!")
 
         for i in range(osallistujat):
@@ -41,7 +42,6 @@ class Kisa:
             Autot.append(auto)
 
     def tunti_kuluu(self):
-        self.tunnit = 0
         for i in Autot:
             i.kiihdytä(random.randint(-10, 15))
             i.kulje(1)
