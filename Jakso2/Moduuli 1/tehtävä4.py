@@ -24,7 +24,7 @@ class Auto:
 
 Autot=[]
 
-kisa=True
+kisa = True
 
 for i in range(10):
     auto = Auto(f"ABC-{i+1}",random.randint(100,200))
