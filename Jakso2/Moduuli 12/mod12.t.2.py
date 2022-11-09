@@ -6,8 +6,8 @@ pyynto = "https://api.openweathermap.org/data/2.5/weather?q="+hakusana+"&appid=a
 vastaus = requests.get(pyynto)
 if vastaus.ok:
     vastaus_json = vastaus.json()
-    print(vastaus_json['weather'])
-    print(vastaus_json['main'])
+    print(vastaus_json['weather'][0]['description'])
+    print(vastaus_json['main']['temp'])
 
 else:
     print("Haku epäonnistui. ")
