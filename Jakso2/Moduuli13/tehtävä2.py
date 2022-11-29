@@ -45,8 +45,6 @@ def hae(icao):
             "municipality": muni,
         }
 
-
-
     except ValueError:
         tilakoodi = 400
         vastaus = {

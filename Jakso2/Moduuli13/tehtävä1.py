@@ -20,7 +20,7 @@ def alkuluku(luku1):
         tilakoodi = 200
         vastaus = {
             "status": tilakoodi,
-            "luku1": luku1,
+            "Luku": luku1,
             "isPrime": isPrime
         }
 
@@ -28,7 +28,7 @@ def alkuluku(luku1):
         tilakoodi = 400
         vastaus = {
             "status": tilakoodi,
-            "teksti": "Virheellinen yhteenlaskettava"
+            "teksti": "Virheellinen luku"
         }
 
     jsonvast = json.dumps(vastaus)
