@@ -22,34 +22,70 @@ lomake.addEventListener('submit', async function(evt) {
       const summary = show[i].show.summary;
       const linkki = show[i].show.url;
       const genret = show[i].show.genres;
+      let commaSeperated = genret.join('/');
       const h2 = document.createElement('h2');
       const p = document.createElement('p');
       const genre = document.createElement('p');
       const img = document.createElement('img');
       const a = document.createElement('a');
+      const dialogue = document.createElement('dialog');
+      const iframe = document.createElement('iframe');
 
-      img.src = show[i].show.image.medium;
-      img.alt = name;
+      iframe.src = linkki;
+
+
+      dialogue.appendChild(iframe);
+
+
+      //dialogue.src=linkki;
+
+
+
+
+
+
+
+      let anchor = document.createElement('a');
+      let link = document.createTextNode(linkki);
+      anchor.appendChild(link);
+      //anchor.href = (linkki + ('target="_blank"'));
+      a.appendChild(anchor);
+
+      anchor.addEventListener('click', () => {
+        dialogue.showModal();
+      });
+
+      dialogue.addEventListener('click', () => {
+        dialogue.close();
+      });
+
+
+
+
+      if (show[i].show.image == null) {
+        img.src = 'https://via.placeholder.com/210x290?text=no+image';
+      } else {
+        img.src = show[i].show.image.medium;
+        img.alt = name;
+      }
 
       h2.innerText = name;
       p.innerHTML = summary;
-      a.innerText = linkki;
-      genre.innerText = genret;
+      genre.innerText = commaSeperated;
       p.appendChild(img);
 
       document.querySelector('#pictures').appendChild(h2);
       document.querySelector('#pictures').appendChild(p);
       document.querySelector('#pictures').appendChild(a);
       document.querySelector('#pictures').appendChild(genre);
-
-
+      document.querySelector('#pictures').appendChild(dialogue);
 
     }
-
 
   } catch (e) {
     console.error();
   }
 });
+
 
 
